@@ -8,7 +8,15 @@ CREATE DATABASE SGH
 USE SGH
 
   /* Création des tables */
-  CREATE TABLE Client()
+  CREATE TABLE Client(id_client SMALLINT IDENTITY (1,1) PRIMARY KEY,
+                      nom_Client VARCHAR(30), 
+                      numeroCivique SMALLINT,
+                      rue VARCHAR(30) ,
+                      ville VARCHAR(30) NOT NULL,
+                      province(3),
+                      téléphone CHAR(9), 
+                      status BIT, /*Le client est actif 1(il loue une chambre ou doit payer une facture, n'a pas de chambre louée et toutes ses factures sont payées*/
+                      id_réservation SMALLINT IDENTITY (1,1) FOREIGN KEY)
   CREATE TABLE Reservation()
   CREATE TABLE Chambre()
   CREATE TABLE Employe()
